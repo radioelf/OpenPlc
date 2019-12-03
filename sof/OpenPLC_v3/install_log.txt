@@ -1,0 +1,1512 @@
+Installing OpenPLC on Raspberry Pi
+Hit http://mirrordirector.raspbian.org jessie InRelease
+Hit http://mirrordirector.raspbian.org jessie/main armhf Packages
+Hit http://mirrordirector.raspbian.org jessie/contrib armhf Packages
+Hit http://mirrordirector.raspbian.org jessie/non-free armhf Packages
+Hit http://mirrordirector.raspbian.org jessie/rpi armhf Packages
+Ign http://mirrordirector.raspbian.org jessie/contrib Translation-en_US
+Ign http://mirrordirector.raspbian.org jessie/contrib Translation-en
+Ign http://mirrordirector.raspbian.org jessie/main Translation-en_US
+Ign http://mirrordirector.raspbian.org jessie/main Translation-en
+Ign http://mirrordirector.raspbian.org jessie/non-free Translation-en_US
+Ign http://mirrordirector.raspbian.org jessie/non-free Translation-en
+Ign http://mirrordirector.raspbian.org jessie/rpi Translation-en_US
+Ign http://mirrordirector.raspbian.org jessie/rpi Translation-en
+Hit http://archive.raspberrypi.org jessie InRelease
+Hit http://archive.raspberrypi.org jessie/main armhf Packages
+Hit http://archive.raspberrypi.org jessie/ui armhf Packages
+Ign http://archive.raspberrypi.org jessie/main Translation-en_US
+Ign http://archive.raspberrypi.org jessie/main Translation-en
+Ign http://archive.raspberrypi.org jessie/ui Translation-en_US
+Ign http://archive.raspberrypi.org jessie/ui Translation-en
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+autoconf is already the newest version.
+automake is already the newest version.
+automake set to manually installed.
+build-essential is already the newest version.
+git is already the newest version.
+libtool is already the newest version.
+make is already the newest version.
+make set to manually installed.
+pkg-config is already the newest version.
+python2.7 is already the newest version.
+python2.7 set to manually installed.
+The following extra packages will be installed:
+  cmake-data libarchive13 libbison-dev libfl-dev libjsoncpp0 liblzo2-2
+  python-cffi python-chardet python-colorama python-cryptography
+  python-distlib python-html5lib python-ndg-httpsclient python-openssl
+  python-pkg-resources python-ply python-pyasn1 python-pycparser
+  python-requests python-setuptools python-six python-urllib3 python-wheel
+Suggested packages:
+  bison-doc codeblocks eclipse ninja-build lrzip python-dev
+  python-cryptography-doc python-cryptography-vectors python-genshi
+  python-lxml python-openssl-doc python-openssl-dbg python-distribute
+  python-distribute-doc python-ply-doc doc-base sqlite3-doc
+Recommended packages:
+  python-dev-all
+The following NEW packages will be installed:
+  bison cmake cmake-data flex libarchive13 libbison-dev libfl-dev libjsoncpp0
+  liblzo2-2 python-cffi python-chardet python-colorama python-cryptography
+  python-distlib python-html5lib python-ndg-httpsclient python-openssl
+  python-pip python-pkg-resources python-ply python-pyasn1 python-pycparser
+  python-requests python-setuptools python-six python-urllib3 python-wheel
+  sqlite3
+0 upgraded, 28 newly installed, 0 to remove and 6 not upgraded.
+Need to get 3,547 kB/7,269 kB of archives.
+After this operation, 29.8 MB of additional disk space will be used.
+Get:1 http://archive.raspberrypi.org/debian/ jessie/main cmake-data all 3.6.2-2~bpo8+1 [1,168 kB]
+Get:2 http://archive.raspberrypi.org/debian/ jessie/main cmake armhf 3.6.2-2~bpo8+1 [2,379 kB]
+Fetched 3,547 kB in 13s (261 kB/s)
+Selecting previously unselected package cmake-data.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 66355 files and directories currently installed.)
+Preparing to unpack .../cmake-data_3.6.2-2~bpo8+1_all.deb ...
+Unpacking cmake-data (3.6.2-2~bpo8+1) ...
+Selecting previously unselected package liblzo2-2:armhf.
+Preparing to unpack .../liblzo2-2_2.08-1.2_armhf.deb ...
+Unpacking liblzo2-2:armhf (2.08-1.2) ...
+Selecting previously unselected package libarchive13:armhf.
+Preparing to unpack .../libarchive13_3.1.2-11+deb8u7_armhf.deb ...
+Unpacking libarchive13:armhf (3.1.2-11+deb8u7) ...
+Selecting previously unselected package libjsoncpp0.
+Preparing to unpack .../libjsoncpp0_0.6.0~rc2-3.1_armhf.deb ...
+Unpacking libjsoncpp0 (0.6.0~rc2-3.1) ...
+Selecting previously unselected package cmake.
+Preparing to unpack .../cmake_3.6.2-2~bpo8+1_armhf.deb ...
+Unpacking cmake (3.6.2-2~bpo8+1) ...
+Selecting previously unselected package libfl-dev:armhf.
+Preparing to unpack .../libfl-dev_2.5.39-8+deb8u2_armhf.deb ...
+Unpacking libfl-dev:armhf (2.5.39-8+deb8u2) ...
+Selecting previously unselected package flex.
+Preparing to unpack .../flex_2.5.39-8+deb8u2_armhf.deb ...
+Unpacking flex (2.5.39-8+deb8u2) ...
+Selecting previously unselected package libbison-dev:armhf.
+Preparing to unpack .../libbison-dev_2%3a3.0.2.dfsg-2_armhf.deb ...
+Unpacking libbison-dev:armhf (2:3.0.2.dfsg-2) ...
+Selecting previously unselected package bison.
+Preparing to unpack .../bison_2%3a3.0.2.dfsg-2_armhf.deb ...
+Unpacking bison (2:3.0.2.dfsg-2) ...
+Selecting previously unselected package python-ply.
+Preparing to unpack .../python-ply_3.4-5_all.deb ...
+Unpacking python-ply (3.4-5) ...
+Selecting previously unselected package python-pycparser.
+Preparing to unpack .../python-pycparser_2.10+dfsg-3_all.deb ...
+Unpacking python-pycparser (2.10+dfsg-3) ...
+Selecting previously unselected package python-cffi.
+Preparing to unpack .../python-cffi_0.8.6-1_armhf.deb ...
+Unpacking python-cffi (0.8.6-1) ...
+Selecting previously unselected package python-pkg-resources.
+Preparing to unpack .../python-pkg-resources_5.5.1-1_all.deb ...
+Unpacking python-pkg-resources (5.5.1-1) ...
+Selecting previously unselected package python-chardet.
+Preparing to unpack .../python-chardet_2.3.0-1_all.deb ...
+Unpacking python-chardet (2.3.0-1) ...
+Selecting previously unselected package python-colorama.
+Preparing to unpack .../python-colorama_0.3.2-1_all.deb ...
+Unpacking python-colorama (0.3.2-1) ...
+Selecting previously unselected package python-six.
+Preparing to unpack .../python-six_1.8.0-1_all.deb ...
+Unpacking python-six (1.8.0-1) ...
+Selecting previously unselected package python-cryptography.
+Preparing to unpack .../python-cryptography_0.6.1-1+deb8u1_armhf.deb ...
+Unpacking python-cryptography (0.6.1-1+deb8u1) ...
+Selecting previously unselected package python-distlib.
+Preparing to unpack .../python-distlib_0.1.9-1_all.deb ...
+Unpacking python-distlib (0.1.9-1) ...
+Selecting previously unselected package python-html5lib.
+Preparing to unpack .../python-html5lib_0.999-3_all.deb ...
+Unpacking python-html5lib (0.999-3) ...
+Selecting previously unselected package python-openssl.
+Preparing to unpack .../python-openssl_0.14-1_all.deb ...
+Unpacking python-openssl (0.14-1) ...
+Selecting previously unselected package python-ndg-httpsclient.
+Preparing to unpack .../python-ndg-httpsclient_0.3.2-1_all.deb ...
+Unpacking python-ndg-httpsclient (0.3.2-1) ...
+Selecting previously unselected package python-urllib3.
+Preparing to unpack .../python-urllib3_1.9.1-3+deb8u1_all.deb ...
+Unpacking python-urllib3 (1.9.1-3+deb8u1) ...
+Selecting previously unselected package python-requests.
+Preparing to unpack .../python-requests_2.4.3-6_all.deb ...
+Unpacking python-requests (2.4.3-6) ...
+Selecting previously unselected package python-setuptools.
+Preparing to unpack .../python-setuptools_5.5.1-1_all.deb ...
+Unpacking python-setuptools (5.5.1-1) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../python-pip_1.5.6-5_all.deb ...
+Unpacking python-pip (1.5.6-5) ...
+Selecting previously unselected package python-pyasn1.
+Preparing to unpack .../python-pyasn1_0.1.7-1_all.deb ...
+Unpacking python-pyasn1 (0.1.7-1) ...
+Selecting previously unselected package python-wheel.
+Preparing to unpack .../python-wheel_0.24.0-1_all.deb ...
+Unpacking python-wheel (0.24.0-1) ...
+Selecting previously unselected package sqlite3.
+Preparing to unpack .../sqlite3_3.8.7.1-1+deb8u4_armhf.deb ...
+Unpacking sqlite3 (3.8.7.1-1+deb8u4) ...
+Processing triggers for man-db (2.7.5-1~bpo8+1) ...
+Processing triggers for install-info (5.2.0.dfsg.1-6) ...
+Setting up cmake-data (3.6.2-2~bpo8+1) ...
+Setting up liblzo2-2:armhf (2.08-1.2) ...
+Setting up libarchive13:armhf (3.1.2-11+deb8u7) ...
+Setting up libjsoncpp0 (0.6.0~rc2-3.1) ...
+Setting up cmake (3.6.2-2~bpo8+1) ...
+Setting up libfl-dev:armhf (2.5.39-8+deb8u2) ...
+Setting up flex (2.5.39-8+deb8u2) ...
+Setting up libbison-dev:armhf (2:3.0.2.dfsg-2) ...
+Setting up bison (2:3.0.2.dfsg-2) ...
+update-alternatives: using /usr/bin/bison.yacc to provide /usr/bin/yacc (yacc) in auto mode
+Setting up python-ply (3.4-5) ...
+Setting up python-pycparser (2.10+dfsg-3) ...
+Setting up python-cffi (0.8.6-1) ...
+Setting up python-pkg-resources (5.5.1-1) ...
+Setting up python-chardet (2.3.0-1) ...
+Setting up python-colorama (0.3.2-1) ...
+Setting up python-six (1.8.0-1) ...
+Setting up python-cryptography (0.6.1-1+deb8u1) ...
+Setting up python-distlib (0.1.9-1) ...
+Setting up python-html5lib (0.999-3) ...
+Setting up python-openssl (0.14-1) ...
+Setting up python-ndg-httpsclient (0.3.2-1) ...
+Setting up python-urllib3 (1.9.1-3+deb8u1) ...
+Setting up python-requests (2.4.3-6) ...
+Setting up python-setuptools (5.5.1-1) ...
+Setting up python-pip (1.5.6-5) ...
+Setting up python-pyasn1 (0.1.7-1) ...
+Setting up python-wheel (0.24.0-1) ...
+Setting up sqlite3 (3.8.7.1-1+deb8u4) ...
+Processing triggers for libc-bin (2.19-18+deb8u10) ...
+Processing triggers for python-support (1.0.15) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+wiringpi is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 6 not upgraded.
+Downloading/unpacking flask
+Downloading/unpacking itsdangerous>=0.24 (from flask)
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl
+Downloading/unpacking click>=5.1 (from flask)
+Downloading/unpacking Jinja2>=2.10.1 (from flask)
+Downloading/unpacking Werkzeug>=0.15 (from flask)
+Downloading/unpacking MarkupSafe>=0.23 (from Jinja2>=2.10.1->flask)
+  Downloading MarkupSafe-1.1.1.tar.gz
+  Running setup.py (path:/tmp/pip-build-bn2fjo/MarkupSafe/setup.py) egg_info for package MarkupSafe
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+Installing collected packages: flask, itsdangerous, click, Jinja2, Werkzeug, MarkupSafe
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/install.py", line 295, in run
+    requirement_set.install(install_options, global_options, root=options.root_path)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1436, in install
+    requirement.install(install_options, global_options, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 672, in install
+    self.move_wheel_files(self.source_dir, root=root)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 902, in move_wheel_files
+    pycompile=self.pycompile,
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 214, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 204, in clobber
+    os.makedirs(destdir)
+  File "/usr/lib/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/flask'
+
+Storing debug log for failure in /home/pi/.pip/pip.log
+Downloading/unpacking flask-login
+  Downloading Flask-Login-0.4.1.tar.gz
+  Running setup.py (path:/tmp/pip-build-Xvs9wM/flask-login/setup.py) egg_info for package flask-login
+    
+Downloading/unpacking Flask (from flask-login)
+Downloading/unpacking itsdangerous>=0.24 (from Flask->flask-login)
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl
+Downloading/unpacking click>=5.1 (from Flask->flask-login)
+Downloading/unpacking Jinja2>=2.10.1 (from Flask->flask-login)
+Downloading/unpacking Werkzeug>=0.15 (from Flask->flask-login)
+Downloading/unpacking MarkupSafe>=0.23 (from Jinja2>=2.10.1->Flask->flask-login)
+  Downloading MarkupSafe-1.1.1.tar.gz
+  Running setup.py (path:/tmp/pip-build-Xvs9wM/MarkupSafe/setup.py) egg_info for package MarkupSafe
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+Installing collected packages: flask-login, Flask, itsdangerous, click, Jinja2, Werkzeug, MarkupSafe
+  Running setup.py install for flask-login
+    error: could not create '/usr/local/lib/python2.7/dist-packages/flask_login': Permission denied
+    Complete output from command /usr/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-Xvs9wM/flask-login/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-47MstS-record/install-record.txt --single-version-externally-managed --compile:
+    running install
+
+running build
+
+running build_py
+
+creating build
+
+creating build/lib.linux-armv6l-2.7
+
+creating build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/signals.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/__init__.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/config.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/_compat.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/utils.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/__about__.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/mixins.py -> build/lib.linux-armv6l-2.7/flask_login
+
+copying flask_login/login_manager.py -> build/lib.linux-armv6l-2.7/flask_login
+
+running install_lib
+
+creating /usr/local/lib/python2.7/dist-packages/flask_login
+
+error: could not create '/usr/local/lib/python2.7/dist-packages/flask_login': Permission denied
+
+----------------------------------------
+Cleaning up...
+Command /usr/bin/python -c "import setuptools, tokenize;__file__='/tmp/pip-build-Xvs9wM/flask-login/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-47MstS-record/install-record.txt --single-version-externally-managed --compile failed with error code 1 in /tmp/pip-build-Xvs9wM/flask-login
+Storing debug log for failure in /home/pi/.pip/pip.log
+Downloading/unpacking pyserial
+Installing collected packages: pyserial
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/install.py", line 295, in run
+    requirement_set.install(install_options, global_options, root=options.root_path)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1436, in install
+    requirement.install(install_options, global_options, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 672, in install
+    self.move_wheel_files(self.source_dir, root=root)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 902, in move_wheel_files
+    pycompile=self.pycompile,
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 214, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 204, in clobber
+    os.makedirs(destdir)
+  File "/usr/lib/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/serial'
+
+Storing debug log for failure in /home/pi/.pip/pip.log
+Downloading/unpacking pymodbus
+Downloading/unpacking pyserial>=3.4 (from pymodbus)
+Downloading/unpacking six==1.11.0 (from pymodbus)
+  Downloading six-1.11.0-py2.py3-none-any.whl
+Installing collected packages: pymodbus, pyserial, six
+Compiling /tmp/pip-build-vIV7Gt/pymodbus/pymodbus/client/asynchronous/asyncio/__init__.py ...
+  File "/tmp/pip-build-vIV7Gt/pymodbus/pymodbus/client/asynchronous/asyncio/__init__.py", line 257
+    yield from self._connect()
+             ^
+SyntaxError: invalid syntax
+
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 122, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/install.py", line 295, in run
+    requirement_set.install(install_options, global_options, root=options.root_path)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 1436, in install
+    requirement.install(install_options, global_options, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 672, in install
+    self.move_wheel_files(self.source_dir, root=root)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 902, in move_wheel_files
+    pycompile=self.pycompile,
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 214, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/usr/lib/python2.7/dist-packages/pip/wheel.py", line 208, in clobber
+    shutil.copy2(srcfile, destfile)
+  File "/usr/lib/python2.7/shutil.py", line 130, in copy2
+    copyfile(src, dst)
+  File "/usr/lib/python2.7/shutil.py", line 83, in copyfile
+    with open(dst, 'wb') as fdst:
+IOError: [Errno 13] Permission denied: '/usr/local/lib/python2.7/dist-packages/ez_setup.py'
+
+Storing debug log for failure in /home/pi/.pip/pip.log
+Downloading/unpacking flask
+Downloading/unpacking itsdangerous>=0.24 (from flask)
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl
+Downloading/unpacking click>=5.1 (from flask)
+Downloading/unpacking Jinja2>=2.10.1 (from flask)
+Downloading/unpacking Werkzeug>=0.15 (from flask)
+Downloading/unpacking MarkupSafe>=0.23 (from Jinja2>=2.10.1->flask)
+  Downloading MarkupSafe-1.1.1.tar.gz
+  Running setup.py (path:/tmp/pip-build-befFZf/MarkupSafe/setup.py) egg_info for package MarkupSafe
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+Installing collected packages: flask, itsdangerous, click, Jinja2, Werkzeug, MarkupSafe
+Compiling /tmp/pip-build-befFZf/Jinja2/jinja2/asyncfilters.py ...
+  File "/tmp/pip-build-befFZf/Jinja2/jinja2/asyncfilters.py", line 7
+    async def auto_to_seq(value):
+            ^
+SyntaxError: invalid syntax
+
+Compiling /tmp/pip-build-befFZf/Jinja2/jinja2/asyncsupport.py ...
+  File "/tmp/pip-build-befFZf/Jinja2/jinja2/asyncsupport.py", line 22
+    async def concat_async(async_gen):
+            ^
+SyntaxError: invalid syntax
+
+  Running setup.py install for MarkupSafe
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'project_urls'
+      warnings.warn(msg)
+    /usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'python_requires'
+      warnings.warn(msg)
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+    building 'markupsafe._speedups' extension
+    arm-linux-gnueabihf-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c src/markupsafe/_speedups.c -o build/temp.linux-armv6l-2.7/src/markupsafe/_speedups.o
+    src/markupsafe/_speedups.c:11:20: fatal error: Python.h: No such file or directory
+     #include <Python.h>
+                        ^
+    compilation terminated.
+    ==========================================================================
+    WARNING: The C extension could not be compiled, speedups are not enabled.
+    Failure information, if any, is above.
+    Retrying the build without the C extension now.
+    ==========================================================================
+    
+    no previously-included directories found matching 'docs/_build'
+    warning: no previously-included files matching '*.py[co]' found anywhere in distribution
+    ==========================================================================
+    WARNING: The C extension could not be compiled, speedups are not enabled.
+    Plain-Python build succeeded.
+    ==========================================================================
+Successfully installed flask itsdangerous click Jinja2 Werkzeug MarkupSafe
+Cleaning up...
+Downloading/unpacking flask-login
+  Downloading Flask-Login-0.4.1.tar.gz
+  Running setup.py (path:/tmp/pip-build-wlW1qG/flask-login/setup.py) egg_info for package flask-login
+    
+Requirement already satisfied (use --upgrade to upgrade): Flask in /usr/local/lib/python2.7/dist-packages (from flask-login)
+Installing collected packages: flask-login
+  Running setup.py install for flask-login
+    
+Successfully installed flask-login
+Cleaning up...
+Downloading/unpacking pyserial
+Installing collected packages: pyserial
+Successfully installed pyserial
+Cleaning up...
+Downloading/unpacking pymodbus
+Requirement already satisfied (use --upgrade to upgrade): pyserial>=3.4 in /usr/local/lib/python2.7/dist-packages (from pymodbus)
+Downloading/unpacking six==1.11.0 (from pymodbus)
+  Downloading six-1.11.0-py2.py3-none-any.whl
+Installing collected packages: pymodbus, six
+Compiling /tmp/pip-build-xEQe5a/pymodbus/pymodbus/client/asynchronous/asyncio/__init__.py ...
+  File "/tmp/pip-build-xEQe5a/pymodbus/pymodbus/client/asynchronous/asyncio/__init__.py", line 257
+    yield from self._connect()
+             ^
+SyntaxError: invalid syntax
+
+  Found existing installation: six 1.8.0
+    Not uninstalling six at /usr/lib/python2.7/dist-packages, owned by OS
+Successfully installed pymodbus six
+Cleaning up...
+
+[MATIEC COMPILER]
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+/home/pi/OpenPLC_v3/utils/matiec_src/config/missing: Unknown `--is-lightweight' option
+Try `/home/pi/OpenPLC_v3/utils/matiec_src/config/missing --help' for more information
+configure: WARNING: 'missing' script is too old or missing
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for bison... bison -y
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for ranlib... ranlib
+checking for gawk... (cached) mawk
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/timeb.h usability... yes
+checking sys/timeb.h presence... yes
+checking for sys/timeb.h... yes
+checking for unistd.h... (cached) yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for inline... inline
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for int8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for alarm... yes
+checking for working mktime... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for clock_gettime... yes
+checking for memset... yes
+checking for pow... no
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for strtoull... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating absyntax/Makefile
+config.status: creating absyntax_utils/Makefile
+config.status: creating stage1_2/Makefile
+config.status: creating stage3/Makefile
+config.status: creating stage4/Makefile
+config.status: creating stage4/generate_c/Makefile
+config.status: creating stage4/generate_iec/Makefile
+config.status: creating config/config.h
+config.status: executing depfiles commands
+Making all in absyntax
+make[1]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/absyntax'
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT absyntax.o -MD -MP -MF .deps/absyntax.Tpo -c -o absyntax.o absyntax.cc
+mv -f .deps/absyntax.Tpo .deps/absyntax.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT visitor.o -MD -MP -MF .deps/visitor.Tpo -c -o visitor.o visitor.cc
+mv -f .deps/visitor.Tpo .deps/visitor.Po
+rm -f libabsyntax.a
+ar cru libabsyntax.a absyntax.o visitor.o 
+ranlib libabsyntax.a
+make[1]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/absyntax'
+Making all in absyntax_utils
+make[1]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/absyntax_utils'
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT absyntax_utils.o -MD -MP -MF .deps/absyntax_utils.Tpo -c -o absyntax_utils.o absyntax_utils.cc
+mv -f .deps/absyntax_utils.Tpo .deps/absyntax_utils.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT add_en_eno_param_decl.o -MD -MP -MF .deps/add_en_eno_param_decl.Tpo -c -o add_en_eno_param_decl.o add_en_eno_param_decl.cc
+mv -f .deps/add_en_eno_param_decl.Tpo .deps/add_en_eno_param_decl.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT decompose_var_instance_name.o -MD -MP -MF .deps/decompose_var_instance_name.Tpo -c -o decompose_var_instance_name.o decompose_var_instance_name.cc
+mv -f .deps/decompose_var_instance_name.Tpo .deps/decompose_var_instance_name.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT array_dimension_iterator.o -MD -MP -MF .deps/array_dimension_iterator.Tpo -c -o array_dimension_iterator.o array_dimension_iterator.cc
+mv -f .deps/array_dimension_iterator.Tpo .deps/array_dimension_iterator.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT case_element_iterator.o -MD -MP -MF .deps/case_element_iterator.Tpo -c -o case_element_iterator.o case_element_iterator.cc
+mv -f .deps/case_element_iterator.Tpo .deps/case_element_iterator.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT function_call_iterator.o -MD -MP -MF .deps/function_call_iterator.Tpo -c -o function_call_iterator.o function_call_iterator.cc
+mv -f .deps/function_call_iterator.Tpo .deps/function_call_iterator.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT function_call_param_iterator.o -MD -MP -MF .deps/function_call_param_iterator.Tpo -c -o function_call_param_iterator.o function_call_param_iterator.cc
+mv -f .deps/function_call_param_iterator.Tpo .deps/function_call_param_iterator.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT function_param_iterator.o -MD -MP -MF .deps/function_param_iterator.Tpo -c -o function_param_iterator.o function_param_iterator.cc
+mv -f .deps/function_param_iterator.Tpo .deps/function_param_iterator.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT get_sizeof_datatype.o -MD -MP -MF .deps/get_sizeof_datatype.Tpo -c -o get_sizeof_datatype.o get_sizeof_datatype.cc
+mv -f .deps/get_sizeof_datatype.Tpo .deps/get_sizeof_datatype.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT get_var_name.o -MD -MP -MF .deps/get_var_name.Tpo -c -o get_var_name.o get_var_name.cc
+mv -f .deps/get_var_name.Tpo .deps/get_var_name.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT search_il_label.o -MD -MP -MF .deps/search_il_label.Tpo -c -o search_il_label.o search_il_label.cc
+mv -f .deps/search_il_label.Tpo .deps/search_il_label.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT search_base_type.o -MD -MP -MF .deps/search_base_type.Tpo -c -o search_base_type.o search_base_type.cc
+mv -f .deps/search_base_type.Tpo .deps/search_base_type.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT search_fb_instance_decl.o -MD -MP -MF .deps/search_fb_instance_decl.Tpo -c -o search_fb_instance_decl.o search_fb_instance_decl.cc
+mv -f .deps/search_fb_instance_decl.Tpo .deps/search_fb_instance_decl.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT search_fb_typedecl.o -MD -MP -MF .deps/search_fb_typedecl.Tpo -c -o search_fb_typedecl.o search_fb_typedecl.cc
+mv -f .deps/search_fb_typedecl.Tpo .deps/search_fb_typedecl.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT search_varfb_instance_type.o -MD -MP -MF .deps/search_varfb_instance_type.Tpo -c -o search_varfb_instance_type.o search_varfb_instance_type.cc
+mv -f .deps/search_varfb_instance_type.Tpo .deps/search_varfb_instance_type.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT search_var_instance_decl.o -MD -MP -MF .deps/search_var_instance_decl.Tpo -c -o search_var_instance_decl.o search_var_instance_decl.cc
+mv -f .deps/search_var_instance_decl.Tpo .deps/search_var_instance_decl.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT spec_init_separator.o -MD -MP -MF .deps/spec_init_separator.Tpo -c -o spec_init_separator.o spec_init_separator.cc
+mv -f .deps/spec_init_separator.Tpo .deps/spec_init_separator.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT type_initial_value.o -MD -MP -MF .deps/type_initial_value.Tpo -c -o type_initial_value.o type_initial_value.cc
+mv -f .deps/type_initial_value.Tpo .deps/type_initial_value.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT debug_ast.o -MD -MP -MF .deps/debug_ast.Tpo -c -o debug_ast.o debug_ast.cc
+debug_ast.cc: In function ‘void dump_cvalue(const_value_c)’:
+debug_ast.cc:54:101: warning: format ‘%f’ expects argument of type ‘double’, but argument 3 has type ‘long double’ [-Wformat=]
+   if      (const_value._real64.is_valid   ()) fprintf(stderr, "%f",        const_value._real64.get());
+                                                                                                     ^
+mv -f .deps/debug_ast.Tpo .deps/debug_ast.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT get_datatype_info.o -MD -MP -MF .deps/get_datatype_info.Tpo -c -o get_datatype_info.o get_datatype_info.cc
+mv -f .deps/get_datatype_info.Tpo .deps/get_datatype_info.Po
+rm -f libabsyntax_utils.a
+ar cru libabsyntax_utils.a absyntax_utils.o add_en_eno_param_decl.o decompose_var_instance_name.o array_dimension_iterator.o case_element_iterator.o function_call_iterator.o function_call_param_iterator.o function_param_iterator.o get_sizeof_datatype.o get_var_name.o search_il_label.o search_base_type.o search_fb_instance_decl.o search_fb_typedecl.o search_varfb_instance_type.o search_var_instance_decl.o spec_init_separator.o type_initial_value.o search_varfb_instance_type.o search_var_instance_decl.o spec_init_separator.o type_initial_value.o debug_ast.o get_datatype_info.o 
+ranlib libabsyntax_utils.a
+make[1]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/absyntax_utils'
+Making all in stage1_2
+make[1]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage1_2'
+/bin/bash ../config/ylwrap iec_bison.yy y.tab.c iec_bison.cc y.tab.h `echo iec_bison.cc | sed -e s/cc$/hh/ -e s/cpp$/hpp/ -e s/cxx$/hxx/ -e s/c++$/h++/ -e s/c$/h/` y.output iec_bison.output -- bison -y -d 
+updating iec_bison.hh
+make  all-am
+make[2]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage1_2'
+/bin/bash ../config/ylwrap iec_flex.ll lex.yy.c iec_flex.cc -- flex -olex.yy.c 
+g++ -DHAVE_CONFIG_H -I. -I../config  -DDEFAULT_LIBDIR='"lib"' -I../../absyntax -DYY_BUF_SIZE=65536 -fpermissive  -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT libstage1_2_a-iec_flex.o -MD -MP -MF .deps/libstage1_2_a-iec_flex.Tpo -c -o libstage1_2_a-iec_flex.o `test -f 'iec_flex.cc' || echo './'`iec_flex.cc
+iec_flex.ll: In function ‘void unput_text(unsigned int)’:
+iec_flex.cc:188:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 for ( yyl = n; yyl < yyleng; ++yyl )\
+                                    ^
+iec_flex.cc:10849:9: note: in expansion of macro ‘YY_LESS_LINENO’
+         YY_LESS_LINENO(yyless_macro_arg);\
+         ^
+iec_flex.ll:2015:3: note: in expansion of macro ‘yyless’
+   yyless(n);
+   ^
+mv -f .deps/libstage1_2_a-iec_flex.Tpo .deps/libstage1_2_a-iec_flex.Po
+g++ -DHAVE_CONFIG_H -I. -I../config  -DDEFAULT_LIBDIR='"lib"' -I../../absyntax -DYY_BUF_SIZE=65536 -fpermissive  -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT libstage1_2_a-iec_bison.o -MD -MP -MF .deps/libstage1_2_a-iec_bison.Tpo -c -o libstage1_2_a-iec_bison.o `test -f 'iec_bison.cc' || echo './'`iec_bison.cc
+mv -f .deps/libstage1_2_a-iec_bison.Tpo .deps/libstage1_2_a-iec_bison.Po
+g++ -DHAVE_CONFIG_H -I. -I../config  -DDEFAULT_LIBDIR='"lib"' -I../../absyntax -DYY_BUF_SIZE=65536 -fpermissive  -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT libstage1_2_a-create_enumtype_conversion_functions.o -MD -MP -MF .deps/libstage1_2_a-create_enumtype_conversion_functions.Tpo -c -o libstage1_2_a-create_enumtype_conversion_functions.o `test -f 'create_enumtype_conversion_functions.cc' || echo './'`create_enumtype_conversion_functions.cc
+mv -f .deps/libstage1_2_a-create_enumtype_conversion_functions.Tpo .deps/libstage1_2_a-create_enumtype_conversion_functions.Po
+g++ -DHAVE_CONFIG_H -I. -I../config  -DDEFAULT_LIBDIR='"lib"' -I../../absyntax -DYY_BUF_SIZE=65536 -fpermissive  -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT libstage1_2_a-stage1_2.o -MD -MP -MF .deps/libstage1_2_a-stage1_2.Tpo -c -o libstage1_2_a-stage1_2.o `test -f 'stage1_2.cc' || echo './'`stage1_2.cc
+mv -f .deps/libstage1_2_a-stage1_2.Tpo .deps/libstage1_2_a-stage1_2.Po
+rm -f libstage1_2.a
+ar cru libstage1_2.a libstage1_2_a-iec_flex.o libstage1_2_a-iec_bison.o libstage1_2_a-create_enumtype_conversion_functions.o libstage1_2_a-stage1_2.o 
+ranlib libstage1_2.a
+make[2]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage1_2'
+make[1]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage1_2'
+Making all in stage3
+make[1]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage3'
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT stage3.o -MD -MP -MF .deps/stage3.Tpo -c -o stage3.o stage3.cc
+mv -f .deps/stage3.Tpo .deps/stage3.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT flow_control_analysis.o -MD -MP -MF .deps/flow_control_analysis.Tpo -c -o flow_control_analysis.o flow_control_analysis.cc
+mv -f .deps/flow_control_analysis.Tpo .deps/flow_control_analysis.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT fill_candidate_datatypes.o -MD -MP -MF .deps/fill_candidate_datatypes.Tpo -c -o fill_candidate_datatypes.o fill_candidate_datatypes.cc
+mv -f .deps/fill_candidate_datatypes.Tpo .deps/fill_candidate_datatypes.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT narrow_candidate_datatypes.o -MD -MP -MF .deps/narrow_candidate_datatypes.Tpo -c -o narrow_candidate_datatypes.o narrow_candidate_datatypes.cc
+mv -f .deps/narrow_candidate_datatypes.Tpo .deps/narrow_candidate_datatypes.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT forced_narrow_candidate_datatypes.o -MD -MP -MF .deps/forced_narrow_candidate_datatypes.Tpo -c -o forced_narrow_candidate_datatypes.o forced_narrow_candidate_datatypes.cc
+mv -f .deps/forced_narrow_candidate_datatypes.Tpo .deps/forced_narrow_candidate_datatypes.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT print_datatypes_error.o -MD -MP -MF .deps/print_datatypes_error.Tpo -c -o print_datatypes_error.o print_datatypes_error.cc
+mv -f .deps/print_datatypes_error.Tpo .deps/print_datatypes_error.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT datatype_functions.o -MD -MP -MF .deps/datatype_functions.Tpo -c -o datatype_functions.o datatype_functions.cc
+mv -f .deps/datatype_functions.Tpo .deps/datatype_functions.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT lvalue_check.o -MD -MP -MF .deps/lvalue_check.Tpo -c -o lvalue_check.o lvalue_check.cc
+mv -f .deps/lvalue_check.Tpo .deps/lvalue_check.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT array_range_check.o -MD -MP -MF .deps/array_range_check.Tpo -c -o array_range_check.o array_range_check.cc
+mv -f .deps/array_range_check.Tpo .deps/array_range_check.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT case_elements_check.o -MD -MP -MF .deps/case_elements_check.Tpo -c -o case_elements_check.o case_elements_check.cc
+mv -f .deps/case_elements_check.Tpo .deps/case_elements_check.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT constant_folding.o -MD -MP -MF .deps/constant_folding.Tpo -c -o constant_folding.o constant_folding.cc
+mv -f .deps/constant_folding.Tpo .deps/constant_folding.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT declaration_check.o -MD -MP -MF .deps/declaration_check.Tpo -c -o declaration_check.o declaration_check.cc
+mv -f .deps/declaration_check.Tpo .deps/declaration_check.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT enum_declaration_check.o -MD -MP -MF .deps/enum_declaration_check.Tpo -c -o enum_declaration_check.o enum_declaration_check.cc
+mv -f .deps/enum_declaration_check.Tpo .deps/enum_declaration_check.Po
+g++ -DHAVE_CONFIG_H -I. -I../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT remove_forward_dependencies.o -MD -MP -MF .deps/remove_forward_dependencies.Tpo -c -o remove_forward_dependencies.o remove_forward_dependencies.cc
+mv -f .deps/remove_forward_dependencies.Tpo .deps/remove_forward_dependencies.Po
+rm -f libstage3.a
+ar cru libstage3.a stage3.o flow_control_analysis.o fill_candidate_datatypes.o narrow_candidate_datatypes.o forced_narrow_candidate_datatypes.o print_datatypes_error.o datatype_functions.o lvalue_check.o array_range_check.o case_elements_check.o constant_folding.o declaration_check.o enum_declaration_check.o remove_forward_dependencies.o 
+ranlib libstage3.a
+make[1]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage3'
+Making all in stage4
+make[1]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4'
+Making all in generate_c
+make[2]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4/generate_c'
+g++ -DHAVE_CONFIG_H -I. -I../../config  -I../../../absyntax  -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT libstage4_c_a-generate_c.o -MD -MP -MF .deps/libstage4_c_a-generate_c.Tpo -c -o libstage4_c_a-generate_c.o `test -f 'generate_c.cc' || echo './'`generate_c.cc
+mv -f .deps/libstage4_c_a-generate_c.Tpo .deps/libstage4_c_a-generate_c.Po
+g++ -DHAVE_CONFIG_H -I. -I../../config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT ../stage4.o -MD -MP -MF .deps/../stage4.Tpo -c -o ../stage4.o ../stage4.cc
+mv -f .deps/../stage4.Tpo .deps/../stage4.Po
+rm -f libstage4_c.a
+ar cru libstage4_c.a libstage4_c_a-generate_c.o ../stage4.o
+ranlib libstage4_c.a
+make[2]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4/generate_c'
+Making all in generate_iec
+make[2]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4/generate_iec'
+g++ -DHAVE_CONFIG_H -I. -I../../config  -I../../../absyntax  -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused   -MT libstage4_iec_a-generate_iec.o -MD -MP -MF .deps/libstage4_iec_a-generate_iec.Tpo -c -o libstage4_iec_a-generate_iec.o `test -f 'generate_iec.cc' || echo './'`generate_iec.cc
+mv -f .deps/libstage4_iec_a-generate_iec.Tpo .deps/libstage4_iec_a-generate_iec.Po
+rm -f libstage4_iec.a
+ar cru libstage4_iec.a libstage4_iec_a-generate_iec.o ../stage4.o
+ranlib libstage4_iec.a
+make[2]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4/generate_iec'
+make[2]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4'
+make[1]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src/stage4'
+make[1]: Entering directory '/home/pi/OpenPLC_v3/utils/matiec_src'
+g++ -DHAVE_CONFIG_H -I. -I./config    -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused -DHGVERSION="\"\""  -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.cc
+mv -f .deps/main.Tpo .deps/main.Po
+g++ -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused -DHGVERSION="\"\""    -o iec2c main.o stage1_2/libstage1_2.a stage3/libstage3.a stage4/generate_c/libstage4_c.a absyntax/libabsyntax.a absyntax_utils/libabsyntax_utils.a  
+g++ -g -Wall -Wpointer-arith -Wwrite-strings -Wno-unused -DHGVERSION="\"\""    -o iec2iec main.o stage1_2/libstage1_2.a stage3/libstage3.a stage4/generate_iec/libstage4_iec.a absyntax/libabsyntax.a absyntax_utils/libabsyntax_utils.a  
+make[1]: Leaving directory '/home/pi/OpenPLC_v3/utils/matiec_src'
+
+[ST OPTIMIZER]
+
+[GLUE GENERATOR]
+
+[OPEN DNP3]
+creating swapfile...
+1000+0 records in
+1000+0 records out
+1048576000 bytes (1.0 GB) copied, 193.507 s, 5.4 MB/s
+Setting up swapspace version 1, size = 1023996 KiB
+no label, UUID=e4080427-1831-4fcc-ac0e-c1c85b5b00cc
+swapon: /home/pi/OpenPLC_v3/utils/dnp3_src/swapfile: insecure permissions 0644, 0600 suggested.
+-- The C compiler identification is GNU 4.9.2
+-- The CXX compiler identification is GNU 4.9.2
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake build is: Release
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+ASIO has been checked out as a git submodule: /home/pi/OpenPLC_v3/utils/dnp3_src/deps/asio/asio/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pi/OpenPLC_v3/utils/dnp3_src
+Scanning dependencies of target openpal
+[  0%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/container/Buffer.cpp.o
+[  1%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/container/RSlice.cpp.o
+[  1%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/container/WSlice.cpp.o
+[  2%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/executor/MonotonicTimestamp.cpp.o
+[  2%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/executor/TimeDuration.cpp.o
+[  3%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/executor/TimerRef.cpp.o
+[  3%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/logging/Logger.cpp.o
+[  4%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/logging/StringFormatting.cpp.o
+[  4%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/ByteSerialization.cpp.o
+[  5%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/DoubleFloat.cpp.o
+[  5%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/FloatByteOrder.cpp.o
+[  6%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/Format.cpp.o
+[  6%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/Parse.cpp.o
+[  7%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/SingleFloat.cpp.o
+[  7%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/serialization/UInt48LE.cpp.o
+[  8%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/util/Limits.cpp.o
+[  8%] Building CXX object CMakeFiles/openpal.dir/cpp/libs/src/openpal/util/ToHex.cpp.o
+[  9%] Linking CXX shared library libopenpal.so
+[  9%] Built target openpal
+Scanning dependencies of target asiopal
+[ 10%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/ASIOSerialHelpers.cpp.o
+[ 10%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/ChannelRetry.cpp.o
+[ 11%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/Executor.cpp.o
+[ 11%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/IOpenDelayStrategy.cpp.o
+[ 12%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/ResourceManager.cpp.o
+[ 12%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/SerialChannel.cpp.o
+[ 13%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/SocketChannel.cpp.o
+[ 13%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/TCPClient.cpp.o
+[ 14%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/TCPServer.cpp.o
+[ 14%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/ThreadPool.cpp.o
+[ 15%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/TimeConversions.cpp.o
+[ 15%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/Timer.cpp.o
+[ 16%] Building CXX object CMakeFiles/asiopal.dir/cpp/libs/src/asiopal/UTCTimeSource.cpp.o
+[ 16%] Linking CXX shared library libasiopal.so
+[ 16%] Built target asiopal
+Scanning dependencies of target opendnp3
+[ 17%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/LogLevels.cpp.o
+[ 17%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/APDUBuilders.cpp.o
+[ 18%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/APDUHeader.cpp.o
+[ 18%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/APDULogging.cpp.o
+[ 19%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/APDURequest.cpp.o
+[ 19%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/APDUResponse.cpp.o
+[ 20%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/APDUWrapper.cpp.o
+[ 20%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/AnalogCommandEvent.cpp.o
+[ 21%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/AnalogOutput.cpp.o
+[ 21%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/AppControlField.cpp.o
+[ 22%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/BinaryCommandEvent.cpp.o
+[ 22%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/ClassField.cpp.o
+[ 23%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/ControlRelayOutputBlock.cpp.o
+[ 23%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/EventTriggers.cpp.o
+[ 24%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/Functions.cpp.o
+[ 24%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/GroupVariationRecord.cpp.o
+[ 25%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/HeaderWriter.cpp.o
+[ 25%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/IINField.cpp.o
+[ 26%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/MeasurementTypes.cpp.o
+[ 26%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/OctetData.cpp.o
+[ 27%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/QualityFlags.cpp.o
+[ 27%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/SecurityStat.cpp.o
+[ 28%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/APDUHeaderParser.cpp.o
+[ 28%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/APDUParser.cpp.o
+[ 29%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/BitReader.cpp.o
+[ 29%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/CountIndexParser.cpp.o
+[ 30%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/CountParser.cpp.o
+[ 30%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/FreeFormatParser.cpp.o
+[ 31%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/IAPDUHandler.cpp.o
+[ 31%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/NumParser.cpp.o
+[ 32%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/ObjectHeaderParser.cpp.o
+[ 32%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/app/parsing/RangeParser.cpp.o
+[ 32%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/Attributes.cpp.o
+[ 33%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/AuthErrorCode.cpp.o
+[ 33%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/CertificateType.cpp.o
+[ 34%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/ChallengeReason.cpp.o
+[ 34%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/ChannelState.cpp.o
+[ 35%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/CommandPointState.cpp.o
+[ 35%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/CommandStatus.cpp.o
+[ 36%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/ControlCode.cpp.o
+[ 36%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/DoubleBit.cpp.o
+[ 37%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/FlagsType.cpp.o
+[ 37%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/FlowControl.cpp.o
+[ 38%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/FunctionCode.cpp.o
+[ 38%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/GroupVariation.cpp.o
+[ 39%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/HMACType.cpp.o
+[ 39%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/IntervalUnits.cpp.o
+[ 40%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/KeyChangeMethod.cpp.o
+[ 40%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/KeyStatus.cpp.o
+[ 41%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/KeyWrapAlgorithm.cpp.o
+[ 41%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/LinkFunction.cpp.o
+[ 42%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/LinkStatus.cpp.o
+[ 42%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/MasterTaskType.cpp.o
+[ 43%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/Parity.cpp.o
+[ 43%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/QualifierCode.cpp.o
+[ 44%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/StopBits.cpp.o
+[ 44%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/TaskCompletion.cpp.o
+[ 45%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/UserOperation.cpp.o
+[ 45%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/gen/UserRole.cpp.o
+[ 46%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/CRC.cpp.o
+[ 46%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/LinkContext.cpp.o
+[ 47%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/LinkFrame.cpp.o
+[ 47%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/LinkHeader.cpp.o
+[ 48%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/LinkHeaderFields.cpp.o
+[ 48%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/LinkLayer.cpp.o
+[ 49%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/LinkLayerParser.cpp.o
+[ 49%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/PriLinkLayerStates.cpp.o
+[ 50%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/SecLinkLayerStates.cpp.o
+[ 50%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/link/ShiftableBuffer.cpp.o
+[ 51%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/AssignClassTask.cpp.o
+[ 51%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/ClearRestartTask.cpp.o
+[ 52%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/CommandSet.cpp.o
+[ 52%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/CommandSetOps.cpp.o
+[ 53%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/CommandTask.cpp.o
+[ 53%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/CommandTaskResult.cpp.o
+[ 54%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/DisableUnsolicitedTask.cpp.o
+[ 54%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/EmptyResponseTask.cpp.o
+[ 55%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/EnableUnsolicitedTask.cpp.o
+[ 55%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/EventScanTask.cpp.o
+[ 56%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/HeaderTypes.cpp.o
+[ 56%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/IMasterTask.cpp.o
+[ 57%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/ITaskLock.cpp.o
+[ 57%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/MasterContext.cpp.o
+[ 58%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/MasterScheduler.cpp.o
+[ 58%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/MasterTasks.cpp.o
+[ 59%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/MeasurementHandler.cpp.o
+[ 59%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/MultidropTaskLock.cpp.o
+[ 60%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/PollTaskBase.cpp.o
+[ 60%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/RestartOperationTask.cpp.o
+[ 61%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/SerialTimeSyncTask.cpp.o
+[ 61%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/SimpleRequestTaskBase.cpp.o
+[ 62%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/StartupIntegrityPoll.cpp.o
+[ 62%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/TaskComparison.cpp.o
+[ 63%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/master/UserPollTask.cpp.o
+[ 63%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group1.cpp.o
+[ 64%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group10.cpp.o
+[ 64%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group11.cpp.o
+[ 65%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group12.cpp.o
+[ 65%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group120.cpp.o
+[ 65%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group121.cpp.o
+[ 66%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group122.cpp.o
+[ 66%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group13.cpp.o
+[ 67%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group2.cpp.o
+[ 67%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group20.cpp.o
+[ 68%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group21.cpp.o
+[ 68%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group22.cpp.o
+[ 69%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group23.cpp.o
+[ 69%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group3.cpp.o
+[ 70%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group30.cpp.o
+[ 70%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group32.cpp.o
+[ 71%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group4.cpp.o
+[ 71%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group40.cpp.o
+[ 72%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group41.cpp.o
+[ 72%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group42.cpp.o
+[ 73%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group43.cpp.o
+[ 73%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group50.cpp.o
+[ 74%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group51.cpp.o
+[ 74%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/objects/Group52.cpp.o
+[ 75%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/ApplicationIIN.cpp.o
+[ 75%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/AssignClassHandler.cpp.o
+[ 76%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/ClassBasedRequestHandler.cpp.o
+[ 76%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/CommandActionAdapter.cpp.o
+[ 77%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/CommandResponseHandler.cpp.o
+[ 77%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/Database.cpp.o
+[ 78%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/DatabaseBuffers.cpp.o
+[ 78%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/DatabaseConfigView.cpp.o
+[ 79%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/DeferredRequest.cpp.o
+[ 79%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/EventBuffer.cpp.o
+[ 80%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/EventBufferConfig.cpp.o
+[ 80%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/EventCount.cpp.o
+[ 81%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/EventWriter.cpp.o
+[ 81%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/IINHelpers.cpp.o
+[ 82%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/IOutstationApplication.cpp.o
+[ 82%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/OutstationContext.cpp.o
+[ 83%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/OutstationStates.cpp.o
+[ 83%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/ReadHandler.cpp.o
+[ 84%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/RequestHistory.cpp.o
+[ 84%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/ResponseContext.cpp.o
+[ 85%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/SOERecord.cpp.o
+[ 85%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/SelectedRanges.cpp.o
+[ 86%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/SimpleCommandHandler.cpp.o
+[ 86%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/StaticBuffers.cpp.o
+[ 87%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/StaticLoadFunctions.cpp.o
+[ 87%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/outstation/WriteHandler.cpp.o
+[ 88%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/transport/TransportLayer.cpp.o
+[ 88%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/transport/TransportRx.cpp.o
+[ 89%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/transport/TransportStack.cpp.o
+[ 89%] Building CXX object CMakeFiles/opendnp3.dir/cpp/libs/src/opendnp3/transport/TransportTx.cpp.o
+[ 90%] Linking CXX shared library libopendnp3.so
+[ 90%] Built target opendnp3
+Scanning dependencies of target asiodnp3
+[ 90%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/ConsoleLogger.cpp.o
+[ 90%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/Conversions.cpp.o
+[ 91%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/DNP3Channel.cpp.o
+[ 91%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/DNP3Manager.cpp.o
+[ 92%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/DNP3ManagerImpl.cpp.o
+[ 92%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/DefaultListenCallbacks.cpp.o
+[ 93%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/DefaultMasterApplication.cpp.o
+[ 93%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/ErrorCodes.cpp.o
+[ 94%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/IOHandler.cpp.o
+[ 94%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/LinkSession.cpp.o
+[ 95%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/MasterScan.cpp.o
+[ 95%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/MasterSessionStack.cpp.o
+[ 96%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/MasterStack.cpp.o
+[ 96%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/MasterTCPServer.cpp.o
+[ 97%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/OutstationStack.cpp.o
+[ 97%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/PrintingCommandCallback.cpp.o
+[ 98%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/PrintingSOEHandler.cpp.o
+[ 98%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/SerialIOHandler.cpp.o
+[ 99%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/TCPClientIOHandler.cpp.o
+[ 99%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/TCPServerIOHandler.cpp.o
+[100%] Building CXX object CMakeFiles/asiodnp3.dir/cpp/libs/src/asiodnp3/UpdateBuilder.cpp.o
+[100%] Linking CXX shared library libasiodnp3.so
+[100%] Built target asiodnp3
+[  9%] Built target openpal
+[ 16%] Built target asiopal
+[ 90%] Built target opendnp3
+[100%] Built target asiodnp3
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /usr/local/lib/libopenpal.so
+-- Installing: /usr/local/lib/libopendnp3.so
+-- Set runtime path of "/usr/local/lib/libopendnp3.so" to ""
+-- Installing: /usr/local/lib/libasiopal.so
+-- Set runtime path of "/usr/local/lib/libasiopal.so" to ""
+-- Installing: /usr/local/lib/libasiodnp3.so
+-- Set runtime path of "/usr/local/lib/libasiodnp3.so" to ""
+-- Up-to-date: /usr/local/include
+-- Installing: /usr/local/include/opendnp3
+-- Installing: /usr/local/include/opendnp3/LogLevels.h
+-- Installing: /usr/local/include/opendnp3/link
+-- Installing: /usr/local/include/opendnp3/link/ILinkListener.h
+-- Installing: /usr/local/include/opendnp3/link/LinkHeaderFields.h
+-- Installing: /usr/local/include/opendnp3/link/LinkStatistics.h
+-- Installing: /usr/local/include/opendnp3/link/LinkConfig.h
+-- Installing: /usr/local/include/opendnp3/master
+-- Installing: /usr/local/include/opendnp3/master/HeaderTypes.h
+-- Installing: /usr/local/include/opendnp3/master/ICommandCollection.h
+-- Installing: /usr/local/include/opendnp3/master/TaskConfig.h
+-- Installing: /usr/local/include/opendnp3/master/ICommandTaskResult.h
+-- Installing: /usr/local/include/opendnp3/master/TaskId.h
+-- Installing: /usr/local/include/opendnp3/master/ISOEHandler.h
+-- Installing: /usr/local/include/opendnp3/master/ICommandProcessor.h
+-- Installing: /usr/local/include/opendnp3/master/RestartOperationResult.h
+-- Installing: /usr/local/include/opendnp3/master/CommandSet.h
+-- Installing: /usr/local/include/opendnp3/master/CommandCallbackT.h
+-- Installing: /usr/local/include/opendnp3/master/HeaderInfo.h
+-- Installing: /usr/local/include/opendnp3/master/IMasterApplication.h
+-- Installing: /usr/local/include/opendnp3/master/CommandPointResult.h
+-- Installing: /usr/local/include/opendnp3/master/ITaskCallback.h
+-- Installing: /usr/local/include/opendnp3/master/TaskInfo.h
+-- Installing: /usr/local/include/opendnp3/master/MasterParams.h
+-- Installing: /usr/local/include/opendnp3/StackStatistics.h
+-- Installing: /usr/local/include/opendnp3/outstation
+-- Installing: /usr/local/include/opendnp3/outstation/Cell.h
+-- Installing: /usr/local/include/opendnp3/outstation/ApplicationIIN.h
+-- Installing: /usr/local/include/opendnp3/outstation/StaticTypeBitfield.h
+-- Installing: /usr/local/include/opendnp3/outstation/EventBufferConfig.h
+-- Installing: /usr/local/include/opendnp3/outstation/IUpdateHandler.h
+-- Installing: /usr/local/include/opendnp3/outstation/OutstationParams.h
+-- Installing: /usr/local/include/opendnp3/outstation/SimpleCommandHandler.h
+-- Installing: /usr/local/include/opendnp3/outstation/IOutstationApplication.h
+-- Installing: /usr/local/include/opendnp3/outstation/ICommandHandler.h
+-- Installing: /usr/local/include/opendnp3/outstation/MeasurementConfig.h
+-- Installing: /usr/local/include/opendnp3/outstation/DatabaseSizes.h
+-- Installing: /usr/local/include/opendnp3/outstation/OutstationConfig.h
+-- Installing: /usr/local/include/opendnp3/gen
+-- Installing: /usr/local/include/opendnp3/gen/CommandStatus.h
+-- Installing: /usr/local/include/opendnp3/gen/FlagsType.h
+-- Installing: /usr/local/include/opendnp3/gen/Parity.h
+-- Installing: /usr/local/include/opendnp3/gen/CounterQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/TimestampMode.h
+-- Installing: /usr/local/include/opendnp3/gen/PointClass.h
+-- Installing: /usr/local/include/opendnp3/gen/ChallengeReason.h
+-- Installing: /usr/local/include/opendnp3/gen/KeyWrapAlgorithm.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticCounterVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/EventBinaryOutputStatusVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/FrozenCounterQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/TaskCompletion.h
+-- Installing: /usr/local/include/opendnp3/gen/OperateType.h
+-- Installing: /usr/local/include/opendnp3/gen/IndexMode.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticBinaryOutputStatusVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/CommandPointState.h
+-- Installing: /usr/local/include/opendnp3/gen/AnalogQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/FlowControl.h
+-- Installing: /usr/local/include/opendnp3/gen/MasterTaskType.h
+-- Installing: /usr/local/include/opendnp3/gen/BinaryQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/LinkStatus.h
+-- Installing: /usr/local/include/opendnp3/gen/LinkFunction.h
+-- Installing: /usr/local/include/opendnp3/gen/KeyStatus.h
+-- Installing: /usr/local/include/opendnp3/gen/ControlCode.h
+-- Installing: /usr/local/include/opendnp3/gen/CertificateType.h
+-- Installing: /usr/local/include/opendnp3/gen/RestartType.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticDoubleBinaryVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticAnalogVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/ConfigAuthMode.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticBinaryVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/EventCounterVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/AssignClassType.h
+-- Installing: /usr/local/include/opendnp3/gen/KeyChangeMethod.h
+-- Installing: /usr/local/include/opendnp3/gen/EventSecurityStatVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticSecurityStatVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/EventAnalogVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/UserOperation.h
+-- Installing: /usr/local/include/opendnp3/gen/HMACType.h
+-- Installing: /usr/local/include/opendnp3/gen/ChannelState.h
+-- Installing: /usr/local/include/opendnp3/gen/UserRole.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticTimeAndIntervalVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/AnalogOutputStatusQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticFrozenCounterVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/GroupVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/IntervalUnits.h
+-- Installing: /usr/local/include/opendnp3/gen/EventAnalogOutputStatusVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/RestartMode.h
+-- Installing: /usr/local/include/opendnp3/gen/TimeSyncMode.h
+-- Installing: /usr/local/include/opendnp3/gen/EventMode.h
+-- Installing: /usr/local/include/opendnp3/gen/EventDoubleBinaryVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/SecurityStatIndex.h
+-- Installing: /usr/local/include/opendnp3/gen/DoubleBitBinaryQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/BinaryOutputStatusQuality.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticAnalogOutputStatusVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/StaticTypeBitmask.h
+-- Installing: /usr/local/include/opendnp3/gen/QualifierCode.h
+-- Installing: /usr/local/include/opendnp3/gen/FunctionCode.h
+-- Installing: /usr/local/include/opendnp3/gen/Attributes.h
+-- Installing: /usr/local/include/opendnp3/gen/AuthErrorCode.h
+-- Installing: /usr/local/include/opendnp3/gen/EventFrozenCounterVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/StopBits.h
+-- Installing: /usr/local/include/opendnp3/gen/EventBinaryVariation.h
+-- Installing: /usr/local/include/opendnp3/gen/DoubleBit.h
+-- Installing: /usr/local/include/opendnp3/app
+-- Installing: /usr/local/include/opendnp3/app/IINField.h
+-- Installing: /usr/local/include/opendnp3/app/OctetData.h
+-- Installing: /usr/local/include/opendnp3/app/GroupVariationID.h
+-- Installing: /usr/local/include/opendnp3/app/QualityMasks.h
+-- Installing: /usr/local/include/opendnp3/app/AnalogCommandEvent.h
+-- Installing: /usr/local/include/opendnp3/app/MeasurementInfo.h
+-- Installing: /usr/local/include/opendnp3/app/ClassField.h
+-- Installing: /usr/local/include/opendnp3/app/AppConstants.h
+-- Installing: /usr/local/include/opendnp3/app/OctetString.h
+-- Installing: /usr/local/include/opendnp3/app/MeasurementTypeSpecs.h
+-- Installing: /usr/local/include/opendnp3/app/Indexed.h
+-- Installing: /usr/local/include/opendnp3/app/ControlRelayOutputBlock.h
+-- Installing: /usr/local/include/opendnp3/app/BinaryCommandEvent.h
+-- Installing: /usr/local/include/opendnp3/app/ITransactable.h
+-- Installing: /usr/local/include/opendnp3/app/MeasurementTypes.h
+-- Installing: /usr/local/include/opendnp3/app/EventType.h
+-- Installing: /usr/local/include/opendnp3/app/AnalogOutput.h
+-- Installing: /usr/local/include/opendnp3/app/parsing
+-- Installing: /usr/local/include/opendnp3/app/parsing/ICollection.h
+-- Installing: /usr/local/include/opendnp3/app/SecurityStat.h
+-- Installing: /usr/local/include/opendnp3/app/Flags.h
+-- Installing: /usr/local/include/opendnp3/app/BaseMeasurementTypes.h
+-- Installing: /usr/local/include/opendnp3/app/EventCells.h
+-- Installing: /usr/local/include/opendnp3/app/EventTriggers.h
+-- Installing: /usr/local/include/opendnp3/app/DNPTime.h
+-- Installing: /usr/local/include/dnp3decode
+-- Installing: /usr/local/include/dnp3decode/IDecoderCallbacks.h
+-- Installing: /usr/local/include/dnp3decode/Decoder.h
+-- Installing: /usr/local/include/asiodnp3
+-- Installing: /usr/local/include/asiodnp3/DNP3Manager.h
+-- Installing: /usr/local/include/asiodnp3/PrintingCommandCallback.h
+-- Installing: /usr/local/include/asiodnp3/IStack.h
+-- Installing: /usr/local/include/asiodnp3/PrintingChannelListener.h
+-- Installing: /usr/local/include/asiodnp3/PrintingSOEHandler.h
+-- Installing: /usr/local/include/asiodnp3/DatabaseConfig.h
+-- Installing: /usr/local/include/asiodnp3/OutstationStackConfig.h
+-- Installing: /usr/local/include/asiodnp3/IMaster.h
+-- Installing: /usr/local/include/asiodnp3/IChannelListener.h
+-- Installing: /usr/local/include/asiodnp3/ISessionAcceptor.h
+-- Installing: /usr/local/include/asiodnp3/ConsoleLogger.h
+-- Installing: /usr/local/include/asiodnp3/IMasterOperations.h
+-- Installing: /usr/local/include/asiodnp3/DefaultMasterApplication.h
+-- Installing: /usr/local/include/asiodnp3/Updates.h
+-- Installing: /usr/local/include/asiodnp3/IOutstation.h
+-- Installing: /usr/local/include/asiodnp3/IMasterScan.h
+-- Installing: /usr/local/include/asiodnp3/DefaultListenCallbacks.h
+-- Installing: /usr/local/include/asiodnp3/IChannel.h
+-- Installing: /usr/local/include/asiodnp3/UpdateBuilder.h
+-- Installing: /usr/local/include/asiodnp3/IMasterSession.h
+-- Installing: /usr/local/include/asiodnp3/IListenCallbacks.h
+-- Installing: /usr/local/include/asiodnp3/ErrorCodes.h
+-- Installing: /usr/local/include/asiodnp3/MasterTCPServer.h
+-- Installing: /usr/local/include/asiodnp3/X509Info.h
+-- Installing: /usr/local/include/asiodnp3/MasterStackConfig.h
+-- Installing: /usr/local/include/openpal
+-- Installing: /usr/local/include/openpal/executor
+-- Installing: /usr/local/include/openpal/executor/UTCTimestamp.h
+-- Installing: /usr/local/include/openpal/executor/ITimer.h
+-- Installing: /usr/local/include/openpal/executor/TimeDuration.h
+-- Installing: /usr/local/include/openpal/executor/TimerRef.h
+-- Installing: /usr/local/include/openpal/executor/IUTCTimeSource.h
+-- Installing: /usr/local/include/openpal/executor/IMonotonicTimeSource.h
+-- Installing: /usr/local/include/openpal/executor/IExecutor.h
+-- Installing: /usr/local/include/openpal/executor/MonotonicTimestamp.h
+-- Installing: /usr/local/include/openpal/container
+-- Installing: /usr/local/include/openpal/container/ArrayView.h
+-- Installing: /usr/local/include/openpal/container/Pair.h
+-- Installing: /usr/local/include/openpal/container/Buffer.h
+-- Installing: /usr/local/include/openpal/container/SecureBuffer.h
+-- Installing: /usr/local/include/openpal/container/WSlice.h
+-- Installing: /usr/local/include/openpal/container/RingBuffer.h
+-- Installing: /usr/local/include/openpal/container/StaticBuffer.h
+-- Installing: /usr/local/include/openpal/container/HasSize.h
+-- Installing: /usr/local/include/openpal/container/Settable.h
+-- Installing: /usr/local/include/openpal/container/LinkedList.h
+-- Installing: /usr/local/include/openpal/container/Array.h
+-- Installing: /usr/local/include/openpal/container/Queue.h
+-- Installing: /usr/local/include/openpal/container/RSlice.h
+-- Installing: /usr/local/include/openpal/util
+-- Installing: /usr/local/include/openpal/util/Finally.h
+-- Installing: /usr/local/include/openpal/util/Comparisons.h
+-- Installing: /usr/local/include/openpal/util/SequenceNum.h
+-- Installing: /usr/local/include/openpal/util/ToHex.h
+-- Installing: /usr/local/include/openpal/util/Limits.h
+-- Installing: /usr/local/include/openpal/util/Uncopyable.h
+-- Installing: /usr/local/include/openpal/logging
+-- Installing: /usr/local/include/openpal/logging/LogLevels.h
+-- Installing: /usr/local/include/openpal/logging/LogFilters.h
+-- Installing: /usr/local/include/openpal/logging/Location.h
+-- Installing: /usr/local/include/openpal/logging/LogMacros.h
+-- Installing: /usr/local/include/openpal/logging/ILogHandler.h
+-- Installing: /usr/local/include/openpal/logging/LogEntry.h
+-- Installing: /usr/local/include/openpal/logging/Logger.h
+-- Installing: /usr/local/include/openpal/logging/StringFormatting.h
+-- Installing: /usr/local/include/openpal/Configure.h
+-- Installing: /usr/local/include/openpal/serialization
+-- Installing: /usr/local/include/openpal/serialization/UInt48LE.h
+-- Installing: /usr/local/include/openpal/serialization/Serialization.h
+-- Installing: /usr/local/include/openpal/serialization/UInt48Type.h
+-- Installing: /usr/local/include/openpal/serialization/SerializationTemplatesLE.h
+-- Installing: /usr/local/include/openpal/serialization/FloatByteOrder.h
+-- Installing: /usr/local/include/openpal/serialization/SingleFloat.h
+-- Installing: /usr/local/include/openpal/serialization/Parse.h
+-- Installing: /usr/local/include/openpal/serialization/Format.h
+-- Installing: /usr/local/include/openpal/serialization/Serializer.h
+-- Installing: /usr/local/include/openpal/serialization/ByteSerialization.h
+-- Installing: /usr/local/include/openpal/serialization/DoubleFloat.h
+-- Installing: /usr/local/include/openpal/channel
+-- Installing: /usr/local/include/openpal/channel/IPhysicalLayerCallbacks.h
+-- Installing: /usr/local/include/openpal/channel/IPhysicalLayer.h
+-- Installing: /usr/local/include/asiopal
+-- Installing: /usr/local/include/asiopal/TLSConfig.h
+-- Installing: /usr/local/include/asiopal/ASIOSerialHelpers.h
+-- Installing: /usr/local/include/asiopal/SerialTypes.h
+-- Installing: /usr/local/include/asiopal/Executor.h
+-- Installing: /usr/local/include/asiopal/TimeConversions.h
+-- Installing: /usr/local/include/asiopal/IListener.h
+-- Installing: /usr/local/include/asiopal/ThreadPool.h
+-- Installing: /usr/local/include/asiopal/IOpenDelayStrategy.h
+-- Installing: /usr/local/include/asiopal/TCPClient.h
+-- Installing: /usr/local/include/asiopal/IChannelCallbacks.h
+-- Installing: /usr/local/include/asiopal/IO.h
+-- Installing: /usr/local/include/asiopal/SocketChannel.h
+-- Installing: /usr/local/include/asiopal/Synchronized.h
+-- Installing: /usr/local/include/asiopal/IPEndpoint.h
+-- Installing: /usr/local/include/asiopal/IResourceManager.h
+-- Installing: /usr/local/include/asiopal/IAsyncChannel.h
+-- Installing: /usr/local/include/asiopal/SerialChannel.h
+-- Installing: /usr/local/include/asiopal/SteadyClock.h
+-- Installing: /usr/local/include/asiopal/LoggingConnectionCondition.h
+-- Installing: /usr/local/include/asiopal/ChannelRetry.h
+-- Installing: /usr/local/include/asiopal/TCPServer.h
+-- Installing: /usr/local/include/asiopal/ResourceManager.h
+-- Installing: /usr/local/include/asiopal/UTCTimeSource.h
+-- Installing: /usr/local/include/asiopal/SocketHelpers.h
+-- Installing: /usr/local/include/asiopal/Timer.h
+removing swapfile...
+
+[LIBMODBUS]
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, `build-aux'.
+libtoolize: linking file `build-aux/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIR, `m4'.
+libtoolize: linking file `m4/libtool.m4'
+libtoolize: linking file `m4/ltoptions.m4'
+libtoolize: linking file `m4/ltsugar.m4'
+libtoolize: linking file `m4/ltversion.m4'
+libtoolize: linking file `m4/lt~obsolete.m4'
+configure.ac:33: installing 'build-aux/compile'
+configure.ac:56: installing 'build-aux/config.guess'
+configure.ac:56: installing 'build-aux/config.sub'
+configure.ac:32: installing 'build-aux/install-sh'
+configure.ac:32: installing 'build-aux/missing'
+src/Makefile.am: installing 'build-aux/depcomp'
+parallel-tests: installing 'build-aux/test-driver'
+
+------------------------------------------------------
+Initialized build system. You can now run ./configure 
+------------------------------------------------------
+
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking how to run the C preprocessor... gcc -std=gnu99 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... 64
+checking whether make supports nested variables... (cached) yes
+checking build system type... armv6l-unknown-linux-gnueabihf
+checking host system type... armv6l-unknown-linux-gnueabihf
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu99... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert armv6l-unknown-linux-gnueabihf file names to armv6l-unknown-linux-gnueabihf format... func_convert_file_noop
+checking how to convert armv6l-unknown-linux-gnueabihf file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc -std=gnu99 object... ok
+checking for sysroot... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu99 static flag -static works... yes
+checking if gcc -std=gnu99 supports -c -o file.o... yes
+checking if gcc -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu99 linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking byteswap.h usability... yes
+checking byteswap.h presence... yes
+checking for byteswap.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking linux/serial.h usability... yes
+checking linux/serial.h presence... yes
+checking for linux/serial.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking netinet/tcp.h usability... yes
+checking netinet/tcp.h presence... yes
+checking for netinet/tcp.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/params.h usability... no
+checking sys/params.h presence... no
+checking for sys/params.h... no
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/types.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking for asciidoc... no
+checking for xmlto... no
+checking whether to build documentation... no
+configure: WARNING: The tools to build the documentation aren't installed
+checking whether __CYGWIN__ is declared... no
+checking for pid_t... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for accept4... yes
+checking for getaddrinfo... yes
+checking for gettimeofday... yes
+checking for inet_ntoa... yes
+checking for memset... yes
+checking for select... yes
+checking for socket... yes
+checking for strerror... yes
+checking for strlcpy... no
+checking for inline... inline
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for int64_t... yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint8_t... yes
+checking winsock2.h usability... no
+checking winsock2.h presence... no
+checking for winsock2.h... no
+checking whether TIOCSRS485 is declared... yes
+checking whether TIOCM_RTS is declared... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating src/modbus-version.h
+config.status: creating src/win32/modbus.dll.manifest
+config.status: creating tests/Makefile
+config.status: creating doc/Makefile
+config.status: creating libmodbus.pc
+config.status: creating config.h
+config.status: creating tests/unit-test.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+        libmodbus 3.1.4
+        ===============
+
+        prefix:                 /usr/local
+        sysconfdir:             ${prefix}/etc
+        libdir:                 ${exec_prefix}/lib
+        includedir:             ${prefix}/include
+
+        compiler:               gcc -std=gnu99
+        cflags:                 -g -O2
+        ldflags:                
+
+        documentation:          no
+        tests:                  yes
+
+Making install in src
+  CC       modbus.lo
+  CC       modbus-data.lo
+  CC       modbus-rtu.lo
+  CC       modbus-tcp.lo
+  CCLD     libmodbus.la
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libmodbus.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libmodbus.so.5.1.0 /usr/local/lib/libmodbus.so.5.1.0
+libtool: install: (cd /usr/local/lib && { ln -s -f libmodbus.so.5.1.0 libmodbus.so.5 || { rm -f libmodbus.so.5 && ln -s libmodbus.so.5.1.0 libmodbus.so.5; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libmodbus.so.5.1.0 libmodbus.so || { rm -f libmodbus.so && ln -s libmodbus.so.5.1.0 libmodbus.so; }; })
+libtool: install: /usr/bin/install -c .libs/libmodbus.lai /usr/local/lib/libmodbus.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/include/modbus'
+ /usr/bin/install -c -m 644 modbus.h modbus-version.h modbus-rtu.h modbus-tcp.h '/usr/local/include/modbus'
+Making install in doc
+make[2]: Nothing to be done for 'install-exec-am'.
+Making install in tests
+  CC       bandwidth-server-one.o
+  CCLD     bandwidth-server-one
+  CC       bandwidth-server-many-up.o
+  CCLD     bandwidth-server-many-up
+  CC       bandwidth-client.o
+  CCLD     bandwidth-client
+  CC       random-test-server.o
+  CCLD     random-test-server
+  CC       random-test-client.o
+  CCLD     random-test-client
+  CC       unit-test-server.o
+  CCLD     unit-test-server
+  CC       unit-test-client.o
+  CCLD     unit-test-client
+  CC       version.o
+  CCLD     version
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/share/doc/libmodbus'
+ /usr/bin/install -c -m 644 MIGRATION README.md '/usr/local/share/doc/libmodbus'
+ /bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libmodbus.pc '/usr/local/lib/pkgconfig'
+
+[OPENPLC SERVICE]
+sudo: Enabling OpenPLC Service...: command not found
+Created symlink from /etc/systemd/system/multi-user.target.wants/openplc.service to /lib/systemd/system/openplc.service.
+
+[FINALIZING]
+Activating Blank driver
+Setting Platform
+Optimizing ST program...
+Generating C files...
+POUS.c
+POUS.h
+LOCATED_VARIABLES.h
+VARIABLES.csv
+Config0.c
+Config0.h
+Res0.c
+Moving Files...
+Compiling for Linux
+Generating object files...
+Generating glueVars...
+Compiling main program...
+Compilation finished successfully!
